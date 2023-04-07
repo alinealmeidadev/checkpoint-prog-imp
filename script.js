@@ -27,11 +27,19 @@ class aluno {
 }
 
 
+//Passo 3 (1,5 pontos)
 
-/* Passo 3 (1,5 pontos)
-
-crie o objeto literal curso que tem como atributos: nome do curso (string), nota de aprovação (number), faltas máximas (number) e uma lista de estudantes (um array composto pelos alunos criados no passo 2).
-
+//crie o objeto literal curso que tem como atributos: nome do curso (string), nota de aprovação (number), faltas máximas (number) e uma lista de estudantes (um array composto pelos alunos criados no passo 2).
+// Criando uma classe Curso
+class curso {
+    constructor(nomeDoCurso, notaAprovacao, faltasMaximas, listaDeEstudantes) {
+      this.nomeDoCurso = nomeDoCurso;
+      this.notaAprovacao = notaAprovacao;
+      this.faltasMaximas = faltasMaximas;
+      this.listaDeEstudantes = listaDeEstudantes;
+    }
+}
+/* 
 
  Passo 4 (1,5 pontos)
 
