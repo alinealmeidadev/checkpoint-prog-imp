@@ -38,7 +38,7 @@ class curso {
       this.faltasMaximas = faltasMaximas;
       this.listaDeEstudantes = listaDeEstudantes;
     }
-}
+
 
 
  //Passo 4 (1,5 pontos)
@@ -49,11 +49,46 @@ class curso {
 		this.listaDeEstudantes.push(aluno);
 	  }
 
-	/*
- Passo 5 (2 pontos)
+	
+ //Passo 5 (2 pontos)
 
-	Crie um método para o objeto curso que receba um aluno (como parâmetro) e retorne true se ele aprovou no curso ou false em caso de reprovação. Para ser aprovado, o aluno tem que ter uma média igual ou acima da nota de aprovação  e ter menos faltas que faltas máximas. Se tiver a mesma quantidade, tem que estar 10% acima da nota de aprovação.
- Passo 6 (2 pontos)
+	//Crie um método para o objeto curso que receba um aluno (como parâmetro) e retorne true se ele aprovou no curso ou false em caso de reprovação. Para ser aprovado, o aluno tem que ter uma média igual ou acima da nota de aprovação  e ter menos faltas que faltas máximas. Se tiver a mesma quantidade, tem que estar 10% acima da nota de aprovação.
+	alunoAprovado(aluno) {
+		const media = aluno.calcularMedia();
+		const faltas = aluno.faltas;
+		if (faltas === this.faltasMaximas) {
+		  return media >= this.notaAprovacao * 1.1;
+		} else {
+		  return media >= this.notaAprovacao && faltas < this.faltasMaximas;
+		}
+	  }
+	
+ //Passo 6 (2 pontos)
 
-	Crie um método para o objeto curso que percorra a lista de estudantes e retorne um array de booleanos com os resultados se os alunos aprovaram ou não. 
- */
+	//Crie um método para o objeto curso que percorra a lista de estudantes e retorne um array de booleanos com os resultados se os alunos aprovaram ou não. 
+
+	
+	listaAprovacao() {
+		const resultados = [];
+		for (let aluno of this.listaEstudantes) {
+		  resultados.push(this.alunoAprovado(aluno));
+		}
+		return resultados;
+	}
+
+}
+
+//Aplicabilidade:
+
+  const listaDeEstudantes = [
+    new aluno('Aline', 4, [7, 9, 4]),
+    new aluno('Sandra', 1, [5, 8, 6]),
+    new Aluno('Claudia', 3, [4, 8, 6]),
+  ];
+
+  console.log(curso.alunoAprovado(listaEstudantes[0])); 
+  console.log(curso.alunoAprovado(listaEstudantes[1]));
+  console.log(curso.alunoAprovado(listaEstudantes[2]));
+  console.log(curso.alunoAprovado(curso.listaEstudantes[3])); // true
+  
+  console.log(curso.listaAprovacao());
