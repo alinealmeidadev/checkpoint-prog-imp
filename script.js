@@ -8,15 +8,27 @@ class aluno {
 		this.faltas = faltas;
 		this.notas = notas
 	}
+
+//Passo 2 (1,5 pontos)
+
+//Na Classe Aluno crie o método calcularMedia que retorna a média de suas notas.
+	calcularMedia(){
+		let soma = 0;
+		for (let i = 0; i < this.notas.length; i++) {
+			soma += this.notas[i]
+		}
+		return soma / this.notas.length;
+	}
+//Também terá um método chamado faltas, que simplesmente aumenta o número de faltas em 1. Crie alguns alunos para testar a sua Classe. 
+
+	faltasAluno() {
+		this.faltas++;
+	}
 }
 
 
-/*  
-Passo 2 (1,5 pontos)
 
-Na Classe Aluno crie o método calcularMedia que retorna a média de suas notas. Também terá um método chamado faltas, que simplesmente aumenta o número de faltas em 1. Crie alguns alunos para testar a sua Classe. 
-
- Passo 3 (1,5 pontos)
+/* Passo 3 (1,5 pontos)
 
 crie o objeto literal curso que tem como atributos: nome do curso (string), nota de aprovação (number), faltas máximas (number) e uma lista de estudantes (um array composto pelos alunos criados no passo 2).
 
